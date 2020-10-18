@@ -21,6 +21,10 @@ public class SavingsAccount {
         return amountToWithdraw;
     }
 
+    public String toString() {
+        return "This is you final balance: " + balance;
+    }
+
     public static void main(String[] args){
         SavingsAccount savings = new SavingsAccount(2000);
 
@@ -44,6 +48,8 @@ public class SavingsAccount {
 
         //Check balance:
         savings.checkBalance();
+
+        savings.toString();
 
     }
 }
