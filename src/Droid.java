@@ -9,8 +9,8 @@ public class Droid {
         System.out.println(getName() + " is performing task: " + task);
         this.batteryLevel = energyTransfer();
         //this.batteryLevel = energyReport() - 10;
-        //System.out.println("Battery Levels are " + this.batteryLevel + "%");
-        System.out.println("Battery Levels are " + energyTransfer() + "%");
+        System.out.println("Battery Levels are " + this.batteryLevel + "%");
+        //System.out.println("Battery Levels are " + energyTransfer() + "%");
 
     }
 
