@@ -25,12 +25,49 @@ public class CarLoan {
     }
 
     //getters
+    public int getCarLoan(){
+        return this.carLoan;
+    }
+    public int getLoanLength(){
+        return this.loanLength;
+    }
+    public int getInterestRate(){
+        return this.interestRate;
+    }
+    public int getDownPayment(){
+        return this.downPayment;
+    }
 
     //setters
+    public void setCarLoan (int aCarLoan) {
+        this.carLoan = aCarLoan;
+    }
+    public void setLoanLength (int aLoanLength) {
+        this.loanLength = aLoanLength;
+    }
+    public void setInterestRate (int aInterestRate) {
+        this.interestRate = aInterestRate;
+    }
+    public void setDownPayment (int aDownPayment) {
+        this.downPayment = aDownPayment;
+    }
 
     //methods
-
-
+    public int remainingBalance(){
+        return getCarLoan() - getDownPayment();
+    }
+    public int loanLengthToMonths(){
+        return getLoanLength() * 12;
+    }
+    public double monthlyBalance(){
+        return remainingBalance() / loanLengthToMonths();
+    }
+    public double monthlyInterest(){
+        return (monthlyBalance() * getInterestRate()) / 100;
+    }
+    public double monthlyPayment(){
+        return monthlyBalance() + monthlyInterest();
+    }
 
     public static void main(String[] args) {
         //initial info about carInfo
@@ -57,6 +94,13 @@ public class CarLoan {
 
             System.out.println(monthlyPayment);
         }
+
+        CarLoan corolla = new CarLoan(10000, 3, 5, 2000);
+        System.out.println("corolla.remainingBalance() = " + corolla.remainingBalance());
+        System.out.println("corolla.monthlyBalance() = " + corolla.monthlyBalance());
+        System.out.println("corolla.monthlyInterest() = " + corolla.monthlyInterest());
+        System.out.println("corolla.monthlyPayment() = " + corolla.monthlyPayment());
+
     }
 
 }
