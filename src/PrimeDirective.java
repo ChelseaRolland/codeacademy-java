@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PrimeDirective {
 
@@ -33,24 +34,30 @@ public class PrimeDirective {
         return primes;
     }
 
-    public ArrayList<Integer> filterEven(int[] numbers) {
-        ArrayList<Integer> selectedNumbers = new ArrayList<Integer>();
-        for (int num : numbers) {
-            if (num % 2 == 0) {
-                selectedNumbers.add(num);
+    public ArrayList<Integer> filterEvenOrOdd (String choice, int [] numbers) {
+        ArrayList<Integer> numList = new ArrayList<Integer>();
+        if (choice.equalsIgnoreCase("even")) {
+            for (int num : numbers) {
+                if (num % 2 == 0) {
+                    numList.add(num);
+                }
             }
-        }
-        return selectedNumbers;
-    }
-
-    public ArrayList<Integer> filterOdd(int[] numbers) {
-        ArrayList<Integer> selectedNumbers = new ArrayList<Integer>();
-        for (int num : numbers) {
-            if (num % 2 != 0) {
-                selectedNumbers.add(num);
+        } else if (choice.equalsIgnoreCase("odd")) {
+            for (int num : numbers) {
+                if (num % 2 != 0) {
+                    numList.add(num);
+                }
             }
+        } else {
+            //System.out.println("This is neither even nor odd");
+            System.out.println("Please enter either even or odd");
+            Scanner sc = new Scanner(System.in);
+            String choiceRedo =  sc.nextLine().trim();
+            //choice =  sc.nextLine().trim();
+            numList = filterEvenOrOdd(choiceRedo, numbers);
+            //filterEvenOrOdd(choice, numbers);
         }
-        return selectedNumbers;
+        return numList;
     }
 
     public int firstPrime(int[] numbers) {
@@ -75,15 +82,17 @@ public class PrimeDirective {
         PrimeDirective pd = new PrimeDirective();
         int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
 
-        System.out.println("pd.isPrime(7) = " + pd.isPrime(7));
-        System.out.println("pd.isPrime(28) = " + pd.isPrime(28));
-        System.out.println("pd.isPrime(2) = " + pd.isPrime(2));
-        System.out.println("pd.isPrime(0) = " + pd.isPrime(0));
-
+//        System.out.println("pd.isPrime(7) = " + pd.isPrime(7));
+//        System.out.println("pd.isPrime(28) = " + pd.isPrime(28));
+//        System.out.println("pd.isPrime(2) = " + pd.isPrime(2));
+//        System.out.println("pd.isPrime(0) = " + pd.isPrime(0));
+//
         System.out.println("pd.onlyPrimes(numbers) = " + pd.onlyPrimes(numbers));
-        System.out.println("pd.filterEven(numbers) = " + pd.filterEven(numbers));
-        System.out.println("pd.filterOdd(numbers) = " + pd.filterOdd(numbers));
         System.out.println("pd.firstPrime(numbers) = " + pd.firstPrime(numbers));
         System.out.println("pd.fibonacciSequence(numbers) = " + pd.fibonacciSequence(numbers));
+
+        System.out.println("pd.filterEvenOrOdd(\"even\", numbers) = " + pd.filterEvenOrOdd("even", numbers));
+        System.out.println("pd.filterEvenOrOdd(\"odd\", numbers) = " + pd.filterEvenOrOdd("odd", numbers));
+        System.out.println("pd.filterEvenOrOdd(\"maybe\", numbers) = " + pd.filterEvenOrOdd("maybe", numbers));
     }
 }
