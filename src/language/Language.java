@@ -1,5 +1,7 @@
 package language;
 
+import java.util.ArrayList;
+
 public class Language {
     protected String name;
     protected int numSpeakers;
@@ -62,6 +64,19 @@ public class Language {
         chinese.getInfo();
         SinoTibetan burmese = new SinoTibetan("Burmese", 12345678);
         burmese.getInfo();
+
+        ArrayList<Language> languages = new ArrayList<Language>();
+        languages.add(icelandic);
+        languages.add(mayan);
+        languages.add(chinese);
+        languages.add(burmese);
+
+        System.out.println("=============");
+
+        for (Language lang : languages) {
+            System.out.println("------------");
+            lang.getInfo();
+        }
     }
 
 }
