@@ -45,4 +45,19 @@ public class Language {
     public void setWordOrder(String wordOrder) {
         this.wordOrder = wordOrder;
     }
+
+    public void getInfo(){
+        System.out.println(this.name + " is spoken by " + this.numSpeakers + " people mainly in " + regionsSpoken + ".");
+        System.out.println("The language that follows the word order: " + wordOrder);
+    }
+
+    public static void main(String[] args){
+        Language icelandic = new Language("Icelandic", 1500000, "Iceland", "subject-verb-object");
+        icelandic.getInfo();
+
+        Mayan mayan = new Mayan("Ki'che'", 100000);
+
+        mayan.getInfo();
+    }
+
 }
