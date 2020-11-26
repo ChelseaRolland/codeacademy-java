@@ -10,10 +10,22 @@ public class Album {
     private double sales;
 
     //Constructors
+
+    //ANYTHING
     public Album() {}
 
+    //SELECT
     public Album(long aId, String aArtist, String aName, String aReleaseDate, String aGenre, double aSale) {
         this.id = aId;
+        this.artist = aArtist;
+        this.name = aName;
+        this.releaseDate = aReleaseDate;
+        this.genre = aGenre;
+        this.sales = aSale;
+    }
+
+    //INSERT
+    public Album (String aArtist, String aName, String aReleaseDate, String aGenre, double aSale) {
         this.artist = aArtist;
         this.name = aName;
         this.releaseDate = aReleaseDate;

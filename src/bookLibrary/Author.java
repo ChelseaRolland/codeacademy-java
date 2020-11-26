@@ -7,9 +7,19 @@ public class Author {
     private String lastName;
 
     //Constructor
+
+    //ANYTHING
     public Author(){}
+
+    //SELECT
     public Author(long aId, String aFirstName, String aLastName){
         this.id = aId;
+        this.firstName = aFirstName;
+        this.lastName = aLastName;
+    }
+
+    //INSERT
+    public Author(String aFirstName, String aLastName){
         this.firstName = aFirstName;
         this.lastName = aLastName;
     }
