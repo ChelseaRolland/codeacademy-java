@@ -56,8 +56,12 @@ public class Language {
         icelandic.getInfo();
 
         Mayan mayan = new Mayan("Ki'che'", 100000);
-
         mayan.getInfo();
+
+        SinoTibetan chinese = new SinoTibetan("Chinese", 1000000);
+        chinese.getInfo();
+        SinoTibetan burmese = new SinoTibetan("Burmese", 12345678);
+        burmese.getInfo();
     }
 
 }
